@@ -227,7 +227,11 @@ Model Decision Tree menunjukkan hasil sempurna (100%) di seluruh metrik evaluasi
 Model Random Forest juga menunjukkan akurasi sempurna, bahkan setelah dilakukan hyperparameter tuning. Hal ini mengindikasikan bahwa model berhasil menggeneralisasi pola dengan sangat baik di dataset ini. Akan tetapi, seperti pada Decision Tree, perlu dilakukan cross-validation tambahan atau pengujian di data lain untuk menghindari asumsi keliru karena kemungkinan overfitting.
 
 **Feature Importance** <br>
-Random Forest Classifier juga menampilkan fitur-fitur paling berpengaruh. Berdasarkan hasil feature importance fitur-fitur yang paling signifikan yaitu:
+Random Forest Classifier juga menampilkan fitur-fitur paling berpengaruh. 
+
+![random forest feature importance](feature_importance.png)
+
+Berdasarkan hasil feature importance, fitur-fitur yang paling signifikan yaitu:
 1. Final_Exam_Score
 2. Past_Exam_Scores
 
