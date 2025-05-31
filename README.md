@@ -154,6 +154,7 @@ Algoritma berbasis struktur pohon, dimana setiap simpul mewakili pengambilan kep
 Model Decision Tree dibangun menggunakan DecisionTreeClassifier dari pustaka sklearn.tree, kemudian dilatih pada data training. Prediksi dilakukan pada data test dan evaluasi menggunakan metrik akurasi, precision, recall, dan F1-score. <br>
 **Parameter yang digunakan:** <br>
 "random_state=42", untuk memastikan reprodusibilitas hasil. <br>
+
 **Kelebihan:**
 - Mudah dipahami dan divisualisasikan.
 - Tidak memerlukan normalisasi atau scaling fitur.
