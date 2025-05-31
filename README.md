@@ -114,7 +114,7 @@ Distribusi hasil visualisasi:
 - Extracurricular_Activities : Jumlah siswa yang tidak mengikuti kegiatan ekstrakurikuler sedikit lebih banyak daripada yang mengikuti. Keterlibatan dalam aktivitas ekstrakurikuler cukup berimbang, dengan sedikit kecenderungan untuk tidak ikut.
 - Pass_Fail: Jumlah siswa yang lulus (Pass) hampir sama dengan yang gagal (Fail). Performa akademik siswa cukup seimbang antara yang berhasil dan tidak berhasil.
 
-**4. Visualisasi Matriks Korelasi Fitur Numerik** : Menganalisis hubungan linier antar fitur numerik dalam dataset untuk mengidentifikasi fitur yang memiliki hubungan positif kuat, negatif kuat, atau hampir tidak ada hubungan sama sekali.
+**4. Visualisasi Matriks Korelasi Fitur Numerik** : menganalisis hubungan linier antar fitur numerik dalam dataset untuk mengidentifikasi fitur yang memiliki hubungan positif kuat, negatif kuat, atau hampir tidak ada hubungan sama sekali.
 
 ![Visualisasi korelasi fitur numerik](matriks_korelasi_numerik.png)
 
