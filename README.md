@@ -147,11 +147,9 @@ Tahapan ini perlu dilakukan agar model tahu mana input dan mana target yang haru
 
 ## **Modeling**
 Membangun dan membandingkan model machine learning guna mengklasifikasikan status kelulusan siswa (Pass/Fail) berdasarkan fitur-fitur yang tersedia dalam dataset. Dalam proyek ini, digunakan dua algoritma klasifikasi yaitu Decision Tree dan Random Forest, disertai proses peningkatan performa melalui hyperparameter tuning.
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
 
 ### 1. Decision Tree Classifier
-Algoritma berbasis struktur pohon, dimana setiap simpul mewakili pengambilan keputusan terhadap fitur tertentu. 
-Model Decision Tree dibangun menggunakan DecisionTreeClassifier dari pustaka sklearn.tree, kemudian dilatih pada data training. Prediksi dilakukan pada data test dan evaluasi menggunakan metrik akurasi, precision, recall, dan F1-score. <br>
+Algoritma berbasis struktur pohon, dimana setiap simpul mewakili pengambilan keputusan terhadap fitur tertentu. Model Decision Tree dibangun menggunakan DecisionTreeClassifier dari pustaka sklearn.tree, kemudian dilatih pada data training. Prediksi dilakukan pada data test dan evaluasi menggunakan metrik akurasi, precision, recall, dan F1-score. <br>
 **Parameter yang digunakan:** <br>
 "random_state=42", untuk memastikan reprodusibilitas hasil. <br>
 
@@ -166,7 +164,7 @@ Model Decision Tree dibangun menggunakan DecisionTreeClassifier dari pustaka skl
 
 ### 2. Random Forest Classifier
 Algoritma ensemble yang terdiri dari beberapa Decision Tree untuk menghasilkan model yang lebih stabil dan akurat. Setiap pohon dilatih pada subset data yang berbeda dan hasil prediksi diambil berdasarkan mayoritas. 
-Model dibangun menggunakan RandomForestClassifier dari sklearn.ensemble, dan dilatih dengan parameter default terlebih dahulu.
+Model dibangun menggunakan RandomForestClassifier dari sklearn.ensemble, dan dilatih dengan parameter default terlebih dahulu. <br>
 
 **Kelebihan:**
 - Lebih akurat dan tahan terhadap overfitting dibanding Decision Tree tunggal.
