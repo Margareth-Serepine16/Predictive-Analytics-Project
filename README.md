@@ -78,7 +78,9 @@ Berbeda dengan nilai ujian sebelumnya, rata-rata nilai ujian akhir hanya sekitar
 ### Tahapan Eksplorasi Data
 Beberapa langkah dalam eksplorasi dan pemahaman dataset yang dilakukan:
 1. **Load Data** : Mengunduh dan memuat dataset yang berjudul "Student Performance Prediction" dari Kaggle secara otomatis menggunakan kagglehub untuk menampilkan informasi mengenai data pada dataset
-2. **Data Checking** : Mengecek nilai yang hilang atau kosong serta mengecek baris yang duplikat untuk penanganan selanjutnya. 
+2. **Data Checking** : 
+- Check Missing Value : Mengecek nilai yang hilang. Melalui pengecekan data, dideteksi tidak ada data yang hilang atau memiliki nilai yang kosong.
+- Check Duplicates : Mengecek baris yang duplikat. Melalui pengecekan data, terdapat ada 208 baris data yang terdeteksi sebagai duplikat.
 3. **Split Feature (Column) Type** : Membagi Fitur menjadi dua jenis:
     - Fitur kategorikal seperti jenis kelamin, pendidikan orang tua, ketersediaan akses internet, partisipasi siswa dalam kegiatan ekstrakurikuler, dan status kelulusan dengan tipe data object.
     - Fitur numerik seperti jam belajar, kehadiran, dan skor ujian dengan tipe data int64 dan float64.
@@ -99,6 +101,12 @@ Distribusi hasil visualisasi:
 ![Visualisasi nilai outlier fitur numerik](cek_outlier.png)
 
 Distribusi hasil :
+1. Study_Hours_per_Week : Distribusi data cukup simetris dan tidak terlihat outlier yang signifikan. Siswa umumnya memiliki kebiasaan belajar yang konsisten, dengan sebagian besar berada dalam rentang wajar.
+2. Attendance_Rate : Tidak terlihat adanya outlier. Tingkat kehadiran siswa rata-rata tinggi dan cukup merata tanpa keanehan distribusi.
+3. Past_Exam_Scores : Hampir tidak ada outlier, distribusi terlihat normal. Mayoritas siswa mendapatkan nilai ujian sebelumnya yang baik dan stabil.
+4. Final_Exam_Score : Tidak ada outlier, namun sebaran data sempit dan cenderung di bagian bawah. Terdapat penurunan performa pada ujian akhir. Rentang nilai yang lebih sempit dan median yang lebih rendah menunjukkan bahwa ujian akhir kemungkinan lebih sulit atau dipengaruhi oleh faktor lain.
+
+Kesimpulan : <br>
 - Tidak ada outlier ekstrem dalam fitur numerik yang ditampilkan.
 - Distribusi nilai cukup normal dan simetris.
 - Data cukup bersih dan siap untuk proses pemodelan, tanpa perlu penanganan outlier besar.
@@ -125,7 +133,11 @@ Distribusi hasil :
 ## **Data Preparation**
 Beberapa teknik data preparation yang dilakukan adalah:
 ### Data Cleaning 
-Menghapus semua baris yang terdeteksi duplikat yang bisa menyebabkan bias dan menghapus fitur (kolom) 'Student_ID' yang tidak relevan karena hanya berfungsi sebagai identifikasi unik tanpa nilai analitis.
+- Menghapus semua baris yang terdeteksi duplikat : Data yang terdeteksi duplikat sejumlah 208 buah dibersihkan dengan dihapus dari dataset awal.
+- Menghapus fitur (kolom) 'Student_ID' : Kolom Student_ID bertipe data string sebagai pengenal unik siswa, jadi tidak termasuk jenis kolom numerikal ataupun kategorikal. Karena kolom Student_ID tidak digunakan, maka kolom tersebut dihapus.
+
+Hasil ukuran dataset setelah data cleaning yaitu 500 rows × 9 columns. Menunjukkan jumlah dataset yang awalnya 708 baris menjadi 500 baris. Dan yang awalnya 10 kolom menjadi 9 kolom
+
 ### Encoding Fitur kategorikal
  Mengubah fitur kategorikal menjadi format numerik yang dapat diproses oleh algoritma machine learning. Dengan menggunakan LabelEncoder, setiap kategori unik dalam suatu kolom direpresentasikan sebagai bilangan bulat. 
  
@@ -193,7 +205,7 @@ Proses improvement:
 **Parameter Terbaik berdasarkan hasil Tuning :**
 - 'n_estimators': 100,
 - 'max_depth': 30,
-- 'min_samples_split': 5,
+- 'min_samples_split': 10,
 - 'min_samples_leaf': 1.
 
 #### Pemilihan Model Terbaik
